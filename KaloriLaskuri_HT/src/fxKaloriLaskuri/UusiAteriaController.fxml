@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxKaloriLaskuri.UusiAteriaController">
+   <children>
+      <Label layoutX="120.0" layoutY="22.0" text="Uusi ateria">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fxmaara" layoutX="174.0" layoutY="123.0" onAction="#keyReleased" promptText="määrä" />
+      <Button layoutX="313.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyTallenna" text="Tallenna" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyPeruuta" text="Peruuta" />
+      <Label fx:id="fxAteriaType" layoutX="150.0" layoutY="85.0" text="Ateria">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="fxruuat" layoutX="12.0" layoutY="123.0" onMouseClicked="#keyRuuat" onMousePressed="#keyRuuat" onMouseReleased="#keyRuuat" prefWidth="150.0" />
+      <TextArea fx:id="fxnaytto" layoutX="74.0" layoutY="181.0" prefHeight="152.0" prefWidth="236.0" />
+      <Button fx:id="fxlisaa" layoutX="333.0" layoutY="123.0" mnemonicParsing="false" onAction="#keyLisaa" text="Lisää" />
+      <Button fx:id="fxmuokkaa" layoutX="160.0" layoutY="366.0" mnemonicParsing="false" onAction="#keyMuokkaa" text="Muokkaa" />
+   </children>
+</AnchorPane>
