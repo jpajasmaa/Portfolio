@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes app</title>
+  </head>
+  <body>
+    <p>This is my quotesvote. You can vote for your favorite quotes.</p>
+    {% if latest_quote_list %}
+    <ul>
+    {% for quote in latest_quote_list %}
+        <li><a href="{% url 'quotesvote:quote' quote.id %}">{{ quote.quote_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quotes are avaidable.</p>
+{% endif %}
+  </body>
+</html>

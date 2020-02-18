@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotesvote app</title>
+  </head>
+  <body>
+    <p>This is results</p>
+<h1>{{ quote.quote_text }}</h1>
+
+<ul>
+{% for vote in quote.vote_set.all %}
+    <li>{{ vote.vote_text }} -- {{ vote.votes }} vote{{ vote.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'quotesvote:quote' quote.id %}">Vote again?</a>
+  </body>
+        <form action="{% url 'quotesvote:index' %}" method="post">
+      {% csrf_token %}
+          <input type="submit" value="Go to mainpage" />
+</html>

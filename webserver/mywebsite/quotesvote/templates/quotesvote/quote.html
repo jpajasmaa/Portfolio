@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotesvote app</title>
+  </head>
+  <body>
+    <p>Quote: </p>
+      <h1>{{ quote.quote_text }}</h1>
+      
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      
+      <form action="{% url 'quotesvote:vote' quote.id %}" method="post">
+      {% csrf_token %}
+      {% for vote in quote.vote_set.all %}
+          <input type="radio" name="vote" id="vote{{ forloop.counter }}" value="      {{ vote.id }}">     
+          <label for="vote{{ forloop.counter }}">{{ vote.vote_text }}</label><br>    
+      {% endfor %}
+      <input type="submit" value="Vote">
+      </form>
+      </ul>
+      <form action="{% url 'quotesvote:index' %}" method="post">
+      {% csrf_token %}
+          <input type="submit" value="Go to mainpage" />
+      </form>
+  </body>
+</html>
